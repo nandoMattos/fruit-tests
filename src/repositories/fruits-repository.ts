@@ -2,23 +2,23 @@ import fruits from "../data/fruits";
 import { FruitInput } from "../services/fruits-service";
 
 export type Fruit = {
-  id: number,
-  name: string,
-  price: number
-}
+  id: number;
+  name: string;
+  price: number;
+};
 
 function getFruits(): Fruit[] {
   return fruits;
 }
 
 function getSpecificFruit(id: number): Fruit | undefined {
-  return fruits.find(fruit => {
+  return fruits.find((fruit) => {
     return fruit.id === id;
   });
 }
 
 function getSpecificFruitByName(name: string): Fruit | undefined {
-  return fruits.find(fruit => {
+  return fruits.find((fruit) => {
     return fruit.name === name;
   });
 }
@@ -32,7 +32,7 @@ const fruitsRepository = {
   getFruits,
   getSpecificFruit,
   getSpecificFruitByName,
-  insertFruit
-}
+  insertFruit,
+};
 
 export default fruitsRepository;

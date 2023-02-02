@@ -9,16 +9,18 @@ function getFruits() {
 function getSpecificFruit(id: number) {
   const fruit = fruitsRepository.getSpecificFruit(id);
   if (!fruit) {
-    throw { message: "Fruit not found." }
+    throw { message: "Fruit not found." };
   }
 
   return fruit;
 }
 
 function createFruit(fruit: FruitInput): void {
-  const fruitAlreadyRegistered = fruitsRepository.getSpecificFruitByName(fruit.name);
+  const fruitAlreadyRegistered = fruitsRepository.getSpecificFruitByName(
+    fruit.name
+  );
   if (fruitAlreadyRegistered) {
-    throw { message: "This fruit already exists!" }
+    throw { message: "This fruit already exists!" };
   }
 
   fruitsRepository.insertFruit(fruit);
@@ -27,7 +29,7 @@ function createFruit(fruit: FruitInput): void {
 const fruitsService = {
   getFruits,
   getSpecificFruit,
-  createFruit
-}
+  createFruit,
+};
 
 export default fruitsService;
